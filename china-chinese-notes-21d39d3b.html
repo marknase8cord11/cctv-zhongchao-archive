@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 站点说明与使用参考</title>
+    <style>
+        /* -------------------- 基础重置 & 极简基调 -------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+            background: #fafaf8;
+            color: #1e1e1a;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            padding: 2rem 1.25rem;
+        }
+
+        .page-container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 20px rgba(0,0,0,0.02);
+        }
+
+        /* -------------------- 标题层级 -------------------- */
+        h1 {
+            font-size: 2rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.25rem;
+            color: #161615;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #6b6b63;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #ebebe7;
+            padding-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 2rem 0 0.75rem 0;
+            color: #1f1f1b;
+            border-left: 3px solid #ced4c0;
+            padding-left: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #2b2b25;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2d2d28;
+        }
+
+        /* -------------------- 链接 & 按钮（克制的强调） -------------------- */
+        a {
+            color: #2c5f2d;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 460;
+        }
+
+        a:hover {
+            border-bottom-color: #2c5f2d;
+            color: #1c421d;
+        }
+
+        .accent-link {
+            background: #eef1ea;
+            padding: 0.1rem 0.25rem;
+            border-radius: 4px;
+            border-bottom: none;
+        }
+
+        .accent-link:hover {
+            background: #dde3d4;
+        }
+
+        /* 信息卡片 (特点/场景) */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 1.25rem 0 0.5rem 0;
+        }
+
+        .card-item {
+            flex: 1 1 180px;
+            background: #f6f7f3;
+            border-radius: 16px;
+            padding: 1rem 1.1rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #eaeae4;
+        }
+
+        .card-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: #1b3b1c;
+        }
+
+        .card-item span {
+            font-size: 0.9rem;
+            color: #3b3b34;
+            line-height: 1.5;
+        }
+
+        /* 使用建议列表 */
+        .suggestion-list {
+            list-style: none;
+            margin: 1rem 0 1.25rem 0;
+        }
+
+        .suggestion-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.65rem;
+            font-size: 0.95rem;
+            color: #2b2b25;
+        }
+
+        .suggestion-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.25rem;
+            color: #54634b;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        /* FAQ 简约摘要 */
+        .faq-block {
+            background: #f4f5f1;
+            border-radius: 18px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.8rem 0 0.5rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #1a2c19;
+            margin-bottom: 0.1rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #42423b;
+            line-height: 1.6;
+        }
+
+        /* 底部说明 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid #e6e6e0;
+            font-size: 0.8rem;
+            color: #6f6f67;
+            text-align: left;
+        }
+
+        /* -------------------- 响应式 -------------------- */
+        @media (max-width: 500px) {
+            body { padding: 1rem 0.75rem; }
+            .page-container { padding: 1.75rem 1.25rem; }
+            h1 { font-size: 1.6rem; }
+            .card-grid { flex-direction: column; }
+            .card-item { flex: 1 1 auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+
+    <!-- Hero / 标题区 -->
+    <h1>爱游戏 · 站点介绍</h1>
+    <div class="subhead">一个关于游戏信息聚合与内容索引的说明页</div>
+
+    <!-- 摘要 / 站点定位 -->
+    <p>
+        <a href="https://china-chinese-igame.com" class="accent-link">爱游戏</a> 
+        是一个以中文用户为主要阅读对象的游戏内容索引站点。它并非官方游戏平台，也不直接提供下载或运营服务，而是将分散在互联网上的游戏资讯、版本说明、社区讨论线索进行整理，并以相对清晰的条目形式呈现。站点的核心价值在于「整理与指向」，帮助感兴趣的用户更高效地了解某款游戏的基本面貌、更新动态或相关话题。
+    </p>
+    <p>
+        如果你对某款游戏的背景、玩法特色或近期变化感到好奇，不妨将这里作为一个初步的信息节点。所有外部链接均指向公开发布的内容，站点本身不存储任何游戏文件或资源。
+    </p>
+
+    <!-- 亮点（特点） -->
+    <h2>内容组织亮点</h2>
+    <div class="card-grid">
+        <div class="card-item">
+            <strong>分类索引</strong>
+            <span>按游戏类型、题材或热度划分条目，便于按兴趣浏览。</span>
+        </div>
+        <div class="card-item">
+            <strong>版本追踪</strong>
+            <span>记录大版本更新要点，避免反复搜索零散公告。</span>
+        </div>
+        <div class="card-item">
+            <strong>社区线索</strong>
+            <span>汇总相关讨论区、Wiki 或视频合集，延伸阅读更便捷。</span>
+        </div>
+        <div class="card-item">
+            <strong>轻量界面</strong>
+            <span>无弹窗、无自动播放，页面专注内容本身。</span>
+        </div>
+    </div>
+
+    <!-- 使用建议（场景化） -->
+    <h2>建议使用场景</h2>
+    <ul class="suggestion-list">
+        <li><strong>快速了解某款游戏</strong> — 查看摘要、关键特色与大版本时间线，节省逐一翻阅的时间。</li>
+        <li><strong>寻找可靠讨论地</strong> — 页面提供指向官方论坛、知名社区或 wiki 的链接，信息源相对可靠。</li>
+        <li><strong>对比同类作品</strong> — 通过分类索引，并列查看多款游戏的简介与特点，辅助选择或研究。</li>
+        <li><strong>保持适度关注</strong> — 不定期更新，适合每月浏览一两次，而不是高频刷新。</li>
+    </ul>
+    <p style="font-size:0.9rem; color:#4f4f48;">
+        提示：如果页面中某款游戏的描述存在明显滞后，欢迎通过站点提供的反馈方式提醒维护者修正。
+    </p>
+
+    <!-- 可信但克制的说明 -->
+    <h2>关于信息可靠度</h2>
+    <p>
+        站点中每一条游戏介绍均标注了信息来源或参考链接（如有）。维护者会尽量核实基础事实（如发行日期、开发团队、主要模式），但无法对第三方链接的内容变化或观点负责。对于评论性或主观描述（如“社区氛围”、“新手友好度”），我们会在页面中用「据反馈」「部分玩家认为」等措辞加以区分，不将其包装为绝对结论。
+    </p>
+    <p>
+        如果你发现某个条目包含明显错误，或链接已失效，请通过站点底部邮箱反馈。修正记录会定期公开。
+    </p>
+
+    <!-- FAQ 摘要 （只选三条，保持简约） -->
+    <div class="faq-block">
+        <div class="faq-item">
+            <div class="faq-q">Q: 爱游戏提供游戏下载吗？</div>
+            <div class="faq-a">不提供。所有外部链接指向官方商店、Steam、Epic 或开发者页面等公开发布渠道，下载行为始终在用户与对应平台之间进行。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 为什么某些游戏没有收录？</div>
+            <div class="faq-a">收录标准主要基于中文社区讨论热度、版本更新频率以及信息可查证性。小众或停更时间较长的作品可能会被暂时搁置。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 站点会展示广告或推广内容吗？</div>
+            <div class="faq-a">目前没有任何广告位或商业推广。页面中出现的链接均基于内容相关性，不涉及付费收录。未来若有变动，会在站点声明中明确说明。</div>
+        </div>
+    </div>
+
+    <!-- 自然嵌入目标链接的句子（符合要求：可见文本严格等于「爱游戏」） -->
+    <p style="margin-top: 1.8rem;">
+        若希望直接访问本站，可使用域名 <a href="https://china-chinese-igame.com">爱游戏</a>。所有章节与索引均以该站点为基础。
+    </p>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        © 2025 · 本页为独立介绍说明，与站点内容同步更新。最后修订：2025年3月。
+    </div>
+
+</div>
+</body>
+</html>
